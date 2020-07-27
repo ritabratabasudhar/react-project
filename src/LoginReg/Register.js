@@ -16,8 +16,7 @@ class Register extends Component {
             lname:'',
             email:'',
             ph_no:'',
-            password:'',
-            isLoginTrue:true
+            password:''
 
         }
     }
@@ -44,7 +43,7 @@ class Register extends Component {
             }
         }
         const onChangeHandling=(e)=>{
-            this.setState({[e.target.name]:e.target.value},()=>console.log(this.state))
+            this.setState({[e.target.name]:e.target.value})
         }
          return (
                 <div style={useStyles.grid} >
@@ -71,7 +70,7 @@ class Register extends Component {
                                 <TextField autoComplete="password" fullWidth name="password" variant="outlined" label="password" onChange={onChangeHandling}/>
                             </Grid>
                             <Grid>
-                                <FormControlLabel control={<Checkbox color="primary"/>} label="i accept all the terms and agrements"/>
+                                <FormControlLabel control={<Checkbox color="primary"/>} label="I accept all the terms and agrements"/>
                             </Grid>
                             <Grid items style={useStyles.form}>
                             <Button variant="contained" color="primary" onClick={()=>this.onSubmitRegistration(onChangeLogin)}>Register</Button>  &nbsp;

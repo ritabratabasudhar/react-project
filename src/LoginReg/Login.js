@@ -12,12 +12,11 @@ class Login extends Component {
 
         this.state = {
             email: '',
-            password: '',
-            isLoginTrue: true
-
+            password: ''
         }
     }
-     submitData=(settheusername)=>{
+    
+    submitData=(settheusername)=>{
         const storevalue=store.getState();
         console.log(storevalue)
         if(this.state.email===storevalue.email && this.state.password==storevalue.password)
@@ -29,8 +28,7 @@ class Login extends Component {
             alert("wrong credentials")
         }
     }
-    
-
+     
     render() {
         const useStyles =
         {
@@ -53,7 +51,6 @@ class Login extends Component {
             return (
 
             <div style={useStyles.grid} >
-                
                 <LoginRegisterContext.Consumer>{(context) => {
                     const { onChangeLogin,settheusername } = context;
                     return(
@@ -72,9 +69,8 @@ class Login extends Component {
                                 </Grid>
                                 <Grid items style={useStyles.form}>
                                     <Button variant="contained" color="primary" onClick={()=>this.submitData(settheusername)} >Login</Button>  &nbsp;
-                             <Button color="secondary" onClick={onChangeLogin}>Don't have an account? Create</Button>
+                                <Button color="secondary" onClick={onChangeLogin}>Don't have an account? Create</Button>
                                 </Grid>
-
                             </Grid>
                         </form>
                     </Container>)

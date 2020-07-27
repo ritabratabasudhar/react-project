@@ -6,12 +6,8 @@ import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import AccountCircle from '@material-ui/icons/AccountCircle';
-import Switch from '@material-ui/core/Switch';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormGroup from '@material-ui/core/FormGroup';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
-import store from '../redux/store'
 import { LoginRegisterContext } from '../Context/LoginRegContext';
 
 const useStyles = makeStyles((theme) => ({
@@ -30,7 +26,7 @@ export default function Homepage() {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
-  const {username}=useContext(LoginRegisterContext);
+  const {username,settheusername}=useContext(LoginRegisterContext);
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
@@ -39,7 +35,9 @@ export default function Homepage() {
   const handleClose = () => {
     setAnchorEl(null);
   };
-
+  const isLoginTrue=(settheusername)=>{
+     settheusername('');
+  }
   return (
     <div className={classes.root}>
       <AppBar position="static">
@@ -47,9 +45,12 @@ export default function Homepage() {
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" className={classes.title}>
-            Photos
+          <Typography variant="h4" className={classes.title}>
+            Dream Travellers<br></br>
+            <Typography variant="h6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~Live ur lyf  live ur dreams!
+            </Typography>
           </Typography>
+          
           {username !="" ? (
             <div>
               <IconButton
@@ -62,7 +63,7 @@ export default function Homepage() {
                 <AccountCircle/>
                 </IconButton>
                 <Typography>{username}</Typography>
-                           <Menu
+                 <Menu
                 id="menu-appbar"
                 anchorEl={anchorEl}
                 anchorOrigin={{
@@ -79,6 +80,7 @@ export default function Homepage() {
               >
                 <MenuItem onClick={handleClose}>Profile</MenuItem>
                 <MenuItem onClick={handleClose}>My account</MenuItem>
+                <MenuItem onClick={()=>isLoginTrue(settheusername)}>Logout</MenuItem>
               </Menu>
             </div>
           ):''}
