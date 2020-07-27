@@ -17,12 +17,13 @@ class Login extends Component {
 
         }
     }
-     submitData=()=>{
+     submitData=(settheusername)=>{
         const storevalue=store.getState();
         console.log(storevalue)
         if(this.state.email===storevalue.email && this.state.password==storevalue.password)
         {
-            alert("welcome")
+            alert("welcome");
+            settheusername(this.state.email);
         }
         else{
             alert("wrong credentials")
@@ -54,7 +55,7 @@ class Login extends Component {
             <div style={useStyles.grid} >
                 
                 <LoginRegisterContext.Consumer>{(context) => {
-                    const { onChangeLogin } = context;
+                    const { onChangeLogin,settheusername } = context;
                     return(
                     <Container component="main" maxWidth="xs">
                         <Typography variant="h4">Login</Typography>
@@ -70,7 +71,7 @@ class Login extends Component {
                                     <TextField autoComplete="password" fullWidth name="password" variant="outlined" label="password" onChange={onChangeHandling} />
                                 </Grid>
                                 <Grid items style={useStyles.form}>
-                                    <Button variant="contained" color="primary" onClick={this.submitData} >Login</Button>  &nbsp;
+                                    <Button variant="contained" color="primary" onClick={()=>this.submitData(settheusername)} >Login</Button>  &nbsp;
                              <Button color="secondary" onClick={onChangeLogin}>Don't have an account? Create</Button>
                                 </Grid>
 

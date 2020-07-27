@@ -1,4 +1,4 @@
-import React from 'react';
+import React ,{useContext}from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -12,6 +12,7 @@ import FormGroup from '@material-ui/core/FormGroup';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import store from '../redux/store'
+import { LoginRegisterContext } from '../Context/LoginRegContext';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -27,14 +28,9 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Homepage() {
   const classes = useStyles();
-  const storevalue=store.getState();
-  const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
-
-  const handleChange = (event) => {
-    setAuth(event.target.checked);
-  };
+  const {username}=useContext(LoginRegisterContext);
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
@@ -46,12 +42,6 @@ export default function Homepage() {
 
   return (
     <div className={classes.root}>
-      <FormGroup>
-        <FormControlLabel
-          control={<Switch checked={auth} onChange={handleChange} aria-label="login switch" />}
-          label={auth ? 'Logout' : 'Login'}
-        />
-      </FormGroup>
       <AppBar position="static">
         <Toolbar>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
@@ -60,7 +50,7 @@ export default function Homepage() {
           <Typography variant="h6" className={classes.title}>
             Photos
           </Typography>
-          {auth && (
+          {username !="" ? (
             <div>
               <IconButton
                 aria-label="account of current user"
@@ -71,8 +61,8 @@ export default function Homepage() {
               >
                 <AccountCircle/>
                 </IconButton>
-             <h2>{storevalue.email}</h2>
-              <Menu
+                <Typography>{username}</Typography>
+                           <Menu
                 id="menu-appbar"
                 anchorEl={anchorEl}
                 anchorOrigin={{
@@ -91,7 +81,7 @@ export default function Homepage() {
                 <MenuItem onClick={handleClose}>My account</MenuItem>
               </Menu>
             </div>
-          )}
+          ):''}
         </Toolbar>
       </AppBar>
     </div>
