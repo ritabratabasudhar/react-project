@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Typography, TextField, FormControlLabel, Checkbox } from '@material-ui/core';
-
+import { Typography, TextField, FormControlLabel, Checkbox,Button } from '@material-ui/core';
+import { LoginRegisterContext } from '../Context/LoginRegContext'
 import { red } from '@material-ui/core/colors';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container'
+import store from '../redux/store'
 
 
 class Register extends Component {
@@ -15,10 +16,17 @@ class Register extends Component {
             lname:'',
             email:'',
             ph_no:'',
-            password:''
+            password:'',
+            isLoginTrue:true
 
         }
     }
+     onSubmitRegistration(onChangeLogin){
+         const{fname,lname,email,ph_no,password}=this.state
+         store.dispatch({type:'REGISTER',fname:fname,lname:lname,email:email,ph_no:ph_no,password:password});
+         //console.log(`the store is ${storeValue}`)
+         onChangeLogin();
+     }
 
     render() {
         const useStyles =
@@ -38,11 +46,11 @@ class Register extends Component {
         const onChangeHandling=(e)=>{
             this.setState({[e.target.name]:e.target.value},()=>console.log(this.state))
         }
-
-
-        return (
-
-            <div style={useStyles.grid} >
+         return (
+                <div style={useStyles.grid} >
+                <LoginRegisterContext.Consumer>{(context)=>{
+                    const {onChangeLogin}= context;
+                    return(
                 <Container component="main" maxWidth="xs">
                     <Typography variant="h4">Register</Typography>
                     <form style={useStyles.form}>
@@ -65,9 +73,16 @@ class Register extends Component {
                             <Grid>
                                 <FormControlLabel control={<Checkbox color="primary"/>} label="i accept all the terms and agrements"/>
                             </Grid>
+                            <Grid items style={useStyles.form}>
+                            <Button variant="contained" color="primary" onClick={()=>this.onSubmitRegistration(onChangeLogin)}>Register</Button>  &nbsp;
+                             <Button color="secondary" onClick={onChangeLogin}>have an account? Login</Button>
+                            </Grid>
                         </Grid>
                     </form>
                 </Container>
+                    )
+                }}
+                </LoginRegisterContext.Consumer>
             </div>
         )
     }
