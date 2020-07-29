@@ -10,7 +10,6 @@ class HomePage extends Component {
   render() { 
     return (  
     <div style={{}}>
-      <MenuBar/>
       <Carousel/>
       <SearchAppBar/>
       <Body/>

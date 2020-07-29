@@ -1,7 +1,10 @@
 import React from 'react';
 import './App.css';
-import LoginRegister from './LoginReg/LoginRegister';
 import Homepage from './HomePage/Homepage';
+import MenuBar from './HomePage/menubar';
+import { Router, Route, Switch} from 'react-router-dom'
+import LoginRegister from './LoginReg/LoginRegister';
+import history from './History/history'
 
 class App extends React.Component
 {
@@ -9,7 +12,14 @@ class App extends React.Component
 {
   return (
     <div className="App">
-      <Homepage/>
+      <MenuBar/>
+      <Router history={history}>
+      <Switch>
+      <Route exact path= '/react-project/'component= {Homepage}/>
+      <Route  path="/react-project/login" component ={LoginRegister}/>
+    
+      </Switch>
+      </Router>
       </div>
   );
 }

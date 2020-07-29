@@ -10,6 +10,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import { LoginRegisterContext } from '../Context/LoginRegContext';
 import { Button } from '@material-ui/core';
+import history from '../History/history';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -38,6 +39,9 @@ export default function MenuBar() {
   };
   const isLoginTrue=(settheusername)=>{
      settheusername('');
+  }
+  const goToLogin=()=>{
+    history.push('/react-project/login')
   }
   return (
     <div className={classes.root}>
@@ -84,7 +88,7 @@ export default function MenuBar() {
                 <MenuItem onClick={()=>isLoginTrue(settheusername)}>Logout</MenuItem>
               </Menu>
             </div>
-          ):<Button variant='contained'>Login</Button>}
+          ):<Button variant='contained' onClick={goToLogin}>Login</Button>}
         </Toolbar>
       </AppBar>
     </div>
