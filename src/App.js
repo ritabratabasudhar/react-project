@@ -5,6 +5,7 @@ import MenuBar from './HomePage/menubar';
 import { Router, Route, Switch} from 'react-router-dom'
 import LoginRegister from './LoginReg/LoginRegister';
 import history from './History/history'
+import DestinationList from './DestinationList/DestinationList';
 
 class App extends React.Component
 {
@@ -17,6 +18,7 @@ class App extends React.Component
       <Switch>
       <Route exact path= '/react-project/'component= {Homepage}/>
       <Route  path="/react-project/login" component ={LoginRegister}/>
+      <Route path="/react-project/destinationList" component={DestinationList}/>
     
       </Switch>
       </Router>

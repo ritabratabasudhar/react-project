@@ -5,6 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container'
 import { LoginRegisterContext } from '../Context/LoginRegContext'
 import store from '../redux/store';
+import history from '../History/history'
 
 class Login extends Component {
     constructor(props) {
@@ -23,6 +24,7 @@ class Login extends Component {
         {
             alert("welcome");
             settheusername(this.state.email);
+            history.push('/react-project')
         }
         else{
             alert("wrong credentials")

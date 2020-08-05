@@ -1,29 +1,162 @@
 [
-{
-    "state":"j&k",
-    "place":"Kashmir"
-},
-{
-    "state":"haryana",
-    "place":"Kashmir"
-},
-{
-    "state":"Delhi",
-    "place":"Kashmir"
-},
-{
-    "state":"Sikkim",
-    "place":"Gantok"
-},
-{
-    "state":"West Bengal",
-    "place":"Kolkata"
-},
-{
-    "state":"karnataka",
-    "place":"Bengaluru"
-}
-
-
-
+    {
+        "state": "jammu",
+        "place": [
+            {
+                "city": "Katra",
+                "price": "1000"
+            }
+        ]
+    },
+    {
+        "state": "Kashmir",
+        "place": [
+            {
+                "city": "Sonmarg",
+                "price": "100"
+            },
+            {
+                "city": "Gulmarg",
+                "price": "2000"
+            },
+            {
+                "city": "Pahalgam",
+                "price": "4000"
+            }
+        ]
+    },
+    {
+        "state": "Leh",
+        "place": [
+            {
+                "city": "ladakh",
+                "price": "100"
+            }
+        ]
+    },
+    {
+        "state": "Sikkim",
+        "place": [
+            {
+                "city": "Gantok",
+                "price": "2000"
+            },
+            {
+                "city": "Lachen & Lachung",
+                "price": "2000"
+            },
+            {
+                "city": "Silk Route",
+                "price": "4000"
+            },
+            {
+                "city": "peling",
+                "price": "2000"
+            }
+        ]
+    },
+    {
+        "state": "West Bengal",
+        "place": [
+            {
+                "city": "Kolkata",
+                "price": "2000"
+            },
+            {
+                "city": "Dargeeling",
+                "price": "2000"
+            },
+            {
+                "city": "Doars",
+                "price": "2000"
+            }
+        ]
+    },
+    {
+        "state": "karnataka",
+        "place": [
+            {
+                "city": "Bengaluru",
+                "price": "2000"
+            },
+            {
+                "city": "Mysore",
+                "price": "2000"
+            }
+        ]
+    },
+    {
+        "state": "Tamil Nadu",
+        "place": [
+            {
+                "city": "Chennai",
+                "price": "2000"
+            },
+            {
+                "city": "Combatore",
+                "price": "2000"
+            }
+        ]
+    },
+    {
+        "state": "Kerela",
+        "place": [
+            {
+                "city": "Kochi",
+                "price": "2000"
+            },
+            {
+                "city": "Tiruvandapuram",
+                "price": "2000"
+            }
+        ]
+    },
+    {
+        "state": "Punjab",
+        "place": [
+            {
+                "city": "Chandigarh",
+                "price": "2000"
+            },
+            {
+                "city": "Amritsar",
+                "price": "2000"
+            },
+            {
+                "city": "Jalandhar",
+                "price": "2000"
+            }
+        ]
+    },
+    {
+        "state": "Goa",
+        "place": [
+            {
+                "city": "Goa",
+                "price": "2000"
+            }
+        ]
+    },
+    {
+        "state": "Arunachal Pradesh",
+        "place": [
+            {
+                "city": "Sela Pass",
+                "price": "2000"
+            },
+            {
+                "city": "Itanagar",
+                "price": "2000"
+            }
+        ]
+    },
+    {
+        "state": "Telengana",
+        "place": [
+            {
+                "city": "Hydrebad",
+                "price": "2000"
+            }
+        ]
+    }
 ]
