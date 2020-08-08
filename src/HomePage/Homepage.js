@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import MenuBar from './menubar';
-import SearchAppBar from './searchbar';
 import Carousel from './carasoul';
 import Body from './body';
 import Footer from './Footer';
@@ -11,7 +9,6 @@ class HomePage extends Component {
     return (  
     <div style={{}}>
       <Carousel/>
-      <SearchAppBar/>
       <Body/>
       <Footer/>
     </div>);

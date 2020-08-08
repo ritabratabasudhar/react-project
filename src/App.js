@@ -6,6 +6,7 @@ import { Router, Route, Switch} from 'react-router-dom'
 import LoginRegister from './LoginReg/LoginRegister';
 import history from './History/history'
 import DestinationList from './DestinationList/DestinationList';
+import Checkout from './Checkout/Checkout';
 
 class App extends React.Component
 {
@@ -19,7 +20,7 @@ class App extends React.Component
       <Route exact path= '/react-project/'component= {Homepage}/>
       <Route  path="/react-project/login" component ={LoginRegister}/>
       <Route path="/react-project/destinationList" component={DestinationList}/>
-    
+      <Route path="/react-project/checkout" component={Checkout}/>    
       </Switch>
       </Router>
       </div>

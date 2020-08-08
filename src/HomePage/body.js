@@ -1,8 +1,18 @@
 import React, { Component } from 'react';
-import { Typography } from '@material-ui/core';
+import { Typography, Button } from '@material-ui/core';
+import history from '../History/history';
 
 function Body(params) {
     return (<div>
+        <div>
+        <Button color="primary" variant="contained" style={{width:"500px",height:"50px",
+            padding:'2px',borderRadius:'20px', marginTop:"5px"}}
+            onClick={()=>history.push('/react-project/destinationList')}
+            >
+            
+              Let's Choose your dream destination
+              </Button>
+        </div>
         <div>
             <Typography variant="h4"><b><u>Welcome to ur Dream Travellers</u></b></Typography>
         </div>

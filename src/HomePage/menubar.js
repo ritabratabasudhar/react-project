@@ -4,20 +4,21 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+import LocalAirportIcon from '@material-ui/icons/LocalAirport';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import { LoginRegisterContext } from '../Context/LoginRegContext';
-import { Button } from '@material-ui/core';
+import { Button, Grid } from '@material-ui/core';
 import history from '../History/history';
+//import { LocalAirport } from 'material-ui-icons';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
   menuButton: {
-    marginRight: theme.spacing(2),
+    marginRight: theme.spacing(1),
   },
   title: {
     flexGrow: 1,
@@ -45,16 +46,19 @@ export default function MenuBar() {
   }
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" style={{height:"57px"}}>
         <Toolbar>
+          <Grid>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon />
+            <LocalAirportIcon onClick={()=>history.push('/react-project')} />
           </IconButton>
-          <Typography variant="h4" className={classes.title}>
-            Dream Travellers<br></br>
-            <Typography variant="h6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~Live ur lyf  live ur dreams!
-            </Typography>
+            <p style={{marginTop:"-10px"}}>Live ur lyf  live ur dreams  !!</p>
+            </Grid>
+          <Typography variant="h5" className={classes.title}>
+            Dream Travellers
+            
           </Typography>
+          
           
           {username !="" ? (
             <div>
@@ -67,7 +71,7 @@ export default function MenuBar() {
               >
                 <AccountCircle/>
                 </IconButton>
-                <Typography>Welcome {username}</Typography>
+                <Typography style={{marginTop:"-10px"}}>Welcome {username}</Typography>
                  <Menu
                 id="menu-appbar"
                 anchorEl={anchorEl}
