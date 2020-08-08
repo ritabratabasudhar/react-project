@@ -23,7 +23,7 @@ class Login extends Component {
         if(this.state.email===storevalue.email && this.state.password==storevalue.password)
         {
             alert("welcome");
-            settheusername(this.state.email);
+            settheusername(storevalue.fname);
             history.push('/react-project')
         }
         else{

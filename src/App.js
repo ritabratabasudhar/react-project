@@ -7,6 +7,7 @@ import LoginRegister from './LoginReg/LoginRegister';
 import history from './History/history'
 import DestinationList from './DestinationList/DestinationList';
 import Checkout from './Checkout/Checkout';
+import Profile from './HomePage/myProfile';
 
 class App extends React.Component
 {
@@ -20,7 +21,8 @@ class App extends React.Component
       <Route exact path= '/react-project/'component= {Homepage}/>
       <Route  path="/react-project/login" component ={LoginRegister}/>
       <Route path="/react-project/destinationList" component={DestinationList}/>
-      <Route path="/react-project/checkout" component={Checkout}/>    
+      <Route path="/react-project/checkout" component={Checkout}/>  
+      <Route path="/react-project/profile"  component={Profile}/>
       </Switch>
       </Router>
       </div>

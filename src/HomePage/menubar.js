@@ -87,7 +87,7 @@ export default function MenuBar() {
                 open={open}
                 onClose={handleClose}
               >
-                <MenuItem onClick={handleClose}>Profile</MenuItem>
+                <MenuItem onClick={()=>history.push('/react-project/profile')}>Profile</MenuItem>
                 <MenuItem onClick={handleClose}>My account</MenuItem>
                 <MenuItem onClick={()=>isLoginTrue(settheusername)}>Logout</MenuItem>
               </Menu>
